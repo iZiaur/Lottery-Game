@@ -1,4 +1,4 @@
-import Lottery from '.Lottery'
+import Lottery from './Lottery'
 import './App.css'
 
 function App() {
