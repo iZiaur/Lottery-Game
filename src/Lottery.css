@@ -1,0 +1,243 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+
+    background:
+        radial-gradient(circle at top left, rgba(99,102,241,0.12), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(139,92,246,0.10), transparent 30%),
+        linear-gradient(135deg, #f8fafc, #eef2ff);
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #1e293b;
+
+    overflow: hidden;
+    position: relative;
+}
+
+/* glowing background circles */
+
+body::before,
+body::after{
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+body::before{
+    background: rgba(99,102,241,0.12);
+    top: -120px;
+    left: -120px;
+}
+
+body::after{
+    background: rgba(168,85,247,0.10);
+    bottom: -120px;
+    right: -120px;
+}
+
+/* main card */
+
+.container{
+    background: rgba(255,255,255,0.88);
+
+    width: 90%;
+    max-width: 650px;
+
+    padding: 60px 40px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 20px 50px rgba(15,23,42,0.10),
+        0 8px 20px rgba(99,102,241,0.08);
+
+    border: 1px solid rgba(255,255,255,0.7);
+
+    position: relative;
+    overflow: hidden;
+
+    margin: auto;
+}
+
+/* decorative shape */
+
+.container::before{
+    content: "";
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    background: rgba(99,102,241,0.06);
+    border-radius: 50%;
+    top: -100px;
+    right: -80px;
+}
+
+/* title */
+
+.container h1{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* winning text */
+
+.win-text{
+    display: block;
+    margin-top: 10px;
+    font-size: 1.4rem;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+/* ticket box */
+
+.ticket{
+    display: inline-block;
+
+    padding: 18px 35px;
+
+    margin-bottom: 40px;
+
+    background: rgba(248,250,252,0.95);
+
+    border: 1px solid #dbeafe;
+
+    border-radius: 18px;
+
+    font-size: 2rem;
+    font-weight: 600;
+
+    color: #334155;
+
+    position: relative;
+    z-index: 1;
+}
+
+/* number */
+
+.ticket span{
+    color: #4f46e5;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+/* buttons wrapper */
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* common button */
+
+button{
+    padding: 16px 32px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    font-family: inherit;
+}
+
+/* primary button */
+
+.btn-primary{
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(79,70,229,0.25);
+}
+
+.btn-primary:hover{
+    transform: translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 16px 35px rgba(79,70,229,0.30);
+}
+
+/* secondary button */
+
+.btn-secondary{
+    background: #f1f5f9;
+
+    color: #334155;
+
+    border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover{
+    background: #e2e8f0;
+
+    transform: translateY(-2px);
+}
+
+/* mobile responsive */
+
+@media(max-width: 600px){
+
+    .container{
+        padding: 45px 25px;
+    }
+
+    .container h1{
+        font-size: 2.8rem;
+    }
+
+    .ticket{
+        width: 100%;
+        font-size: 1.4rem;
+    }
+
+    .ticket span{
+        font-size: 1.8rem;
+    }
+
+    .buttons{
+        flex-direction: column;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+
