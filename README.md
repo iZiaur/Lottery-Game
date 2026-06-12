@@ -54,8 +54,8 @@ graph TB
     APP -->|"Passes Action (props)"| BTN
     BTN -->|"onClick Event"| STATE
     STATE -->|"Calls"| MATH
-    MATH -->>|"Returns new ticket array"| STATE
-    STATE -->>|"Triggers Re-render"| APP
+    MATH -->|"Returns new ticket array"| STATE
+    STATE -->|"Triggers Re-render"| APP
 ```
 
 ---
